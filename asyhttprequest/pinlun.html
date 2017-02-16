@@ -1,0 +1,53 @@
+<html>
+	<body>
+		<script type="text/javascript" src="./asyhttprequest.js"></script>
+		<script type="text/javascript">
+		var data = {
+				client_id:'cyr45LmB4',
+				topic_url:'https://s.cloud.gmw.cn/2016/c/2017-02-08/697323.shtml',
+				page_size:10,
+				hot_size:10,
+			};
+
+		// asyhttprequest.jsonp(
+		// 	'http://changyan.sohu.com/api/2/topic/load',
+		// 	data,
+		// 	function(res){
+		// 		console.log(res);
+		// 	}
+		// );
+
+		// asyhttprequest.ajax({
+		// 	url: 'http://changyan.sohu.com/api/2/topic/load',
+		// 	data:data,
+		// 	dataType:'jsonp',
+		// 	success:function(res){
+		// 		console.log(res);
+		// 	}
+		// });
+		asy.ajax({
+			url:'ajax.php',
+			data:data,
+			type:'post',
+			error:function(xhr){
+				console.log("error");
+			},
+			success:function(res){
+				console.log(res);
+			},
+			beforeSend:function(xhr){
+				console.log("beforeSend");
+			},
+			complete:function(xhr){
+				console.log('complete');
+			},
+		});
+		// var base = {a:1,b:[1,2,3],d:{d1:1,d2:2}};
+		// asyhttprequest.extend(base, {b:2}, {c:3}, {c:4,d:5}, {c:6,a:7} );
+		// console.log(base);
+		// base = {a:1,b:[1,2,3],d:{d1:1,d2:2}};
+		// asyhttprequest.extend(true,base,  {b:[2,5]}, {c:3}, {c:4,d:{d3:3}}, {c:6,a:7}  );
+		// console.log(base);
+		</script>	
+	</body>
+</html>
